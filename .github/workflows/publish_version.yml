@@ -66,7 +66,7 @@ jobs:
               per_page: 1
             });
             let latestReleaseVersion;
-            if (releases === undefined || releases.data === undefined) {
+            if (releases === undefined || releases.data === undefined || releases.data.length === 0) {
               console.log('No releases found, using v0.0.0 as latest release version');
               latestReleaseVersion = 'v0.0.0';
             } else {

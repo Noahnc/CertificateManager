@@ -34,13 +34,14 @@ resource "azurerm_role_definition" "custom_role_assigner" {
 
 ```bash
 module "main_certificate_manager" {
-  source                 = <module-source>
+  source                 = "Noahnc/certificate_manager/azurerm"
+  version                = "1.0.0"
   name                   = <name>
   location               = <location>
   resource_group_name    = <resource-group-name>
   key_vault              = {
-    name                = <key-vault-name>
-    id = <key_vault_id>
+    name = <key-vault-name>
+    id   = <key_vault_id>
   }
   enable_verbose_logging = false
   default_contact_email  = <mail>
